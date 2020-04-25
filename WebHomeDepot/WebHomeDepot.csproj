@@ -148,6 +148,7 @@
     <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
+    <Content Include="PruebaGit.aspx" />
     <Content Include="scripts\ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -486,6 +487,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PruebaGit.aspx.cs">
+      <DependentUpon>PruebaGit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PruebaGit.aspx.designer.cs">
+      <DependentUpon>PruebaGit.aspx</DependentUpon>
     </Compile>
     <Compile Include="SesionadorArchivo.ashx.cs">
       <DependentUpon>SesionadorArchivo.ashx</DependentUpon>
