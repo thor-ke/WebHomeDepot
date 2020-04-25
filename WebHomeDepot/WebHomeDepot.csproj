@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CC2C8C5-9BAC-4C51-A468-7F95746BD0C3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebHomeDepot</RootNamespace>
+    <AssemblyName>WebHomeDepot</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.0.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.0.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.0.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.0.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.0.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.0.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.11.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.11\lib\net40\SpreadsheetLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\jquery.jqGrid\ui.jqgrid.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Editor.aspx" />
+    <Content Include="EditorExcel.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="scripts\ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Ppal.aspx" />
+    <Content Include="Recursos\css\all.css" />
+    <Content Include="Recursos\css\bootstrap-grid.css" />
+    <Content Include="Recursos\css\bootstrap-grid.min.css" />
+    <Content Include="Recursos\css\bootstrap-reboot.css" />
+    <Content Include="Recursos\css\bootstrap-reboot.min.css" />
+    <Content Include="Recursos\css\bootstrap.css" />
+    <Content Include="Recursos\css\bootstrap.min.css" />
+    <Content Include="Recursos\gridBT\all.min.css" />
+    <Content Include="Recursos\gridBT\bootstrap.min.css" />
+    <Content Include="Recursos\gridBT\bootstrap.min.js" />
+    <Content Include="Recursos\gridBT\grid.locale-en.js" />
+    <Content Include="Recursos\gridBT\grid.locale-it.js" />
+    <Content Include="Recursos\gridBT\jquery-2.2.0.min.js" />
+    <Content Include="Recursos\gridBT\jquery-ui.min.js" />
+    <Content Include="Recursos\gridBT\jquery.jqGrid.min.js" />
+    <Content Include="Recursos\gridBT\popper.min.js" />
+    <Content Include="Recursos\gridBT\ui.jqgrid-bootstrap4.css" />
+    <Content Include="Recursos\js\bootstrap.bundle.js" />
+    <Content Include="Recursos\js\bootstrap.bundle.min.js" />
+    <Content Include="Recursos\js\bootstrap.js" />
+    <Content Include="Recursos\js\bootstrap.min.js" />
+    <Content Include="Recursos\webfonts\fa-brands-400.svg" />
+    <Content Include="Recursos\webfonts\fa-regular-400.svg" />
+    <Content Include="Recursos\webfonts\fa-solid-900.svg" />
+    <Content Include="Recursos\webfonts\glyphicons-halflings-regular.svg" />
+    <Content Include="scripts\i18n\grid.locale-ar.js" />
+    <Content Include="scripts\i18n\grid.locale-bg.js" />
+    <Content Include="scripts\i18n\grid.locale-bg1251.js" />
+    <Content Include="scripts\i18n\grid.locale-cat.js" />
+    <Content Include="scripts\i18n\grid.locale-cn.js" />
+    <Content Include="scripts\i18n\grid.locale-cs.js" />
+    <Content Include="scripts\i18n\grid.locale-da.js" />
+    <Content Include="scripts\i18n\grid.locale-de.js" />
+    <Content Include="scripts\i18n\grid.locale-dk.js" />
+    <Content Include="scripts\i18n\grid.locale-el.js" />
+    <Content Include="scripts\i18n\grid.locale-en.js" />
+    <Content Include="scripts\i18n\grid.locale-es.js" />
+    <Content Include="scripts\i18n\grid.locale-fa.js" />
+    <Content Include="scripts\i18n\grid.locale-fi.js" />
+    <Content Include="scripts\i18n\grid.locale-fr.js" />
+    <Content Include="scripts\i18n\grid.locale-gl.js" />
+    <Content Include="scripts\i18n\grid.locale-he.js" />
+    <Content Include="scripts\i18n\grid.locale-hr.js" />
+    <Content Include="scripts\i18n\grid.locale-hr1250.js" />
+    <Content Include="scripts\i18n\grid.locale-hu.js" />
+    <Content Include="scripts\i18n\grid.locale-id.js" />
+    <Content Include="scripts\i18n\grid.locale-is.js" />
+    <Content Include="scripts\i18n\grid.locale-it.js" />
+    <Content Include="scripts\i18n\grid.locale-ja.js" />
+    <Content Include="scripts\i18n\grid.locale-kr.js" />
+    <Content Include="scripts\i18n\grid.locale-lt.js" />
+    <Content Include="scripts\i18n\grid.locale-mne.js" />
+    <Content Include="scripts\i18n\grid.locale-nl.js" />
+    <Content Include="scripts\i18n\grid.locale-no.js" />
+    <Content Include="scripts\i18n\grid.locale-pl.js" />
+    <Content Include="scripts\i18n\grid.locale-pt-br.js" />
+    <Content Include="scripts\i18n\grid.locale-pt.js" />
+    <Content Include="scripts\i18n\grid.locale-ro.js" />
+    <Content Include="scripts\i18n\grid.locale-ru.js" />
+    <Content Include="scripts\i18n\grid.locale-sk.js" />
+    <Content Include="scripts\i18n\grid.locale-sr-latin.js" />
+    <Content Include="scripts\i18n\grid.locale-sr.js" />
+    <Content Include="scripts\i18n\grid.locale-sv.js" />
+    <Content Include="scripts\i18n\grid.locale-th.js" />
+    <Content Include="scripts\i18n\grid.locale-tr.js" />
+    <Content Include="scripts\i18n\grid.locale-tw.js" />
+    <Content Include="scripts\i18n\grid.locale-ua.js" />
+    <Content Include="scripts\i18n\grid.locale-vi.js" />
+    <Content Include="scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="scripts\jquery-3.0.0.min.map" />
+    <Content Include="scripts\data.json" />
+    <Content Include="data.json" />
+    <Content Include="ListadorArchivos.ashx" />
+    <Content Include="BajadorArchi.ashx" />
+    <Content Include="scripts\plupload\examples\custom.html" />
+    <Content Include="scripts\plupload\examples\events.html" />
+    <Content Include="scripts\plupload\examples\jquery\all_runtimes.html" />
+    <Content Include="scripts\plupload\examples\jquery\jquery_ui_widget.html" />
+    <Content Include="scripts\plupload\examples\jquery\queue_widget.html" />
+    <Content Include="scripts\plupload\js\i18n\ar.js" />
+    <Content Include="scripts\plupload\js\i18n\az.js" />
+    <Content Include="scripts\plupload\js\i18n\bg.js" />
+    <Content Include="scripts\plupload\js\i18n\bs.js" />
+    <Content Include="scripts\plupload\js\i18n\ca.js" />
+    <Content Include="scripts\plupload\js\i18n\cs.js" />
+    <Content Include="scripts\plupload\js\i18n\cy.js" />
+    <Content Include="scripts\plupload\js\i18n\da.js" />
+    <Content Include="scripts\plupload\js\i18n\de.js" />
+    <Content Include="scripts\plupload\js\i18n\el.js" />
+    <Content Include="scripts\plupload\js\i18n\en.js" />
+    <Content Include="scripts\plupload\js\i18n\es.js" />
+    <Content Include="scripts\plupload\js\i18n\et.js" />
+    <Content Include="scripts\plupload\js\i18n\fa.js" />
+    <Content Include="scripts\plupload\js\i18n\fi.js" />
+    <Content Include="scripts\plupload\js\i18n\fr.js" />
+    <Content Include="scripts\plupload\js\i18n\he.js" />
+    <Content Include="scripts\plupload\js\i18n\hr.js" />
+    <Content Include="scripts\plupload\js\i18n\hu.js" />
+    <Content Include="scripts\plupload\js\i18n\hy.js" />
+    <Content Include="scripts\plupload\js\i18n\id.js" />
+    <Content Include="scripts\plupload\js\i18n\it.js" />
+    <Content Include="scripts\plupload\js\i18n\ja.js" />
+    <Content Include="scripts\plupload\js\i18n\ka.js" />
+    <Content Include="scripts\plupload\js\i18n\kk.js" />
+    <Content Include="scripts\plupload\js\i18n\km.js" />
+    <Content Include="scripts\plupload\js\i18n\ko.js" />
+    <Content Include="scripts\plupload\js\i18n\ku_IQ.js" />
+    <Content Include="scripts\plupload\js\i18n\lt.js" />
+    <Content Include="scripts\plupload\js\i18n\lv.js" />
+    <Content Include="scripts\plupload\js\i18n\ms.js" />
+    <Content Include="scripts\plupload\js\i18n\nl.js" />
+    <Content Include="scripts\plupload\js\i18n\pl.js" />
+    <Content Include="scripts\plupload\js\i18n\pt.js" />
+    <Content Include="scripts\plupload\js\i18n\pt_BR.js" />
+    <Content Include="scripts\plupload\js\i18n\ro.js" />
+    <Content Include="scripts\plupload\js\i18n\ru.js" />
+    <Content Include="scripts\plupload\js\i18n\sk.js" />
+    <Content Include="scripts\plupload\js\i18n\sl.js" />
+    <Content Include="scripts\plupload\js\i18n\sq.js" />
+    <Content Include="scripts\plupload\js\i18n\sr.js" />
+    <Content Include="scripts\plupload\js\i18n\sv.js" />
+    <Content Include="scripts\plupload\js\i18n\th_TH.js" />
+    <Content Include="scripts\plupload\js\i18n\tr.js" />
+    <Content Include="scripts\plupload\js\i18n\uk_UA.js" />
+    <Content Include="scripts\plupload\js\i18n\vi.js" />
+    <Content Include="scripts\plupload\js\i18n\zh_CN.js" />
+    <Content Include="scripts\plupload\js\i18n\zh_TW.js" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\delete.gif" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\done.gif" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\error.gif" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\throbber.gif" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="scripts\plupload\js\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="scripts\plupload\js\jquery.ui.plupload\css\jquery.ui.plupload.css" />
+    <Content Include="scripts\plupload\js\jquery.ui.plupload\img\loading.gif" />
+    <Content Include="scripts\plupload\js\jquery.ui.plupload\img\plupload.png" />
+    <Content Include="scripts\plupload\js\jquery.ui.plupload\jquery.ui.plupload.js" />
+    <Content Include="scripts\plupload\js\jquery.ui.plupload\jquery.ui.plupload.min.js" />
+    <Content Include="scripts\plupload\js\moxie.js" />
+    <Content Include="scripts\plupload\js\moxie.min.js" />
+    <Content Include="scripts\plupload\js\Moxie.swf" />
+    <Content Include="scripts\plupload\js\Moxie.xap" />
+    <Content Include="scripts\plupload\js\plupload.dev.js" />
+    <Content Include="scripts\plupload\js\plupload.full.min.js" />
+    <Content Include="scripts\plupload\js\plupload.min.js" />
+    <Content Include="scripts\plupload\license.txt" />
+    <Content Include="scripts\plupload\readme.md" />
+    <Content Include="scripts\plupload\examples\upload.php" />
+    <Content Include="scripts\plupload\examples\jquery\s3.php" />
+    <Content Include="scripts\plupload\examples\dump.php" />
+    <Content Include="scripts\plupload\bower.json" />
+    <Content Include="SubidorArchi.ashx" />
+    <Content Include="Procesador.ashx" />
+    <Content Include="Master.Master" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Recursos\css\bootstrap-grid.css.map" />
+    <Content Include="Recursos\css\bootstrap-grid.min.css.map" />
+    <Content Include="Recursos\css\bootstrap-reboot.css.map" />
+    <Content Include="Recursos\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Recursos\css\bootstrap.css.map" />
+    <Content Include="Recursos\css\bootstrap.min.css.map" />
+    <Content Include="Recursos\js\bootstrap.bundle.js.map" />
+    <Content Include="Recursos\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Recursos\js\bootstrap.js.map" />
+    <Content Include="Recursos\js\bootstrap.min.js.map" />
+    <Content Include="Recursos\webfonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Recursos\webfonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Recursos\webfonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Recursos\webfonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Recursos\webfonts\fa-solid-900.woff2" />
+    <Content Include="Recursos\webfonts\fa-brands-400.eot" />
+    <Content Include="Recursos\webfonts\fa-brands-400.ttf" />
+    <Content Include="Recursos\webfonts\fa-brands-400.woff" />
+    <Content Include="Recursos\webfonts\fa-brands-400.woff2" />
+    <Content Include="Recursos\webfonts\fa-regular-400.eot" />
+    <Content Include="Recursos\webfonts\fa-regular-400.ttf" />
+    <Content Include="Recursos\webfonts\fa-regular-400.woff" />
+    <Content Include="Recursos\webfonts\fa-regular-400.woff2" />
+    <Content Include="Recursos\webfonts\fa-solid-900.eot" />
+    <Content Include="Recursos\webfonts\fa-solid-900.ttf" />
+    <Content Include="Recursos\webfonts\fa-solid-900.woff" />
+    <Content Include="SesionadorArchivo.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Example PurchaseOrder.xml" />
+    <Content Include="scripts\ai.0.22.9-build00167.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\bootstrap.bundle.js" />
+    <Content Include="scripts\bootstrap.bundle.min.js" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\esm\popper-utils.js" />
+    <Content Include="scripts\esm\popper-utils.min.js" />
+    <Content Include="scripts\esm\popper.js" />
+    <Content Include="scripts\esm\popper.min.js" />
+    <Content Include="scripts\esm\popper.min.js.map" />
+    <Content Include="scripts\esm\popper.js.map" />
+    <Content Include="scripts\esm\popper-utils.min.js.map" />
+    <Content Include="scripts\esm\popper-utils.js.map" />
+    <Content Include="scripts\bootstrap.min.js.map" />
+    <Content Include="scripts\bootstrap.js.map" />
+    <Content Include="scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="usuarios.json" />
+    <None Include="scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="scripts\jquery-3.0.0.js" />
+    <Content Include="scripts\jquery-3.0.0.min.js" />
+    <Content Include="scripts\jquery-3.0.0.slim.js" />
+    <Content Include="scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="scripts\jquery-ui-1.8.11.js" />
+    <Content Include="scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="scripts\jquery.jqGrid.min.js" />
+    <Content Include="scripts\jquery.jqGrid.src.js" />
+    <Content Include="scripts\master.js" />
+    <Content Include="scripts\popper-utils.js" />
+    <Content Include="scripts\popper-utils.min.js" />
+    <Content Include="scripts\popper.js" />
+    <Content Include="scripts\popper.min.js" />
+    <Content Include="Content\themes\base\ui.jqgrid-bootstrap.css" />
+    <Content Include="scripts\umd\popper-utils.js" />
+    <Content Include="scripts\umd\popper-utils.min.js" />
+    <Content Include="scripts\umd\popper.js" />
+    <Content Include="scripts\umd\popper.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="scripts\umd\popper.min.js.map" />
+    <Content Include="scripts\umd\popper.js.map" />
+    <Content Include="scripts\umd\popper-utils.min.js.map" />
+    <Content Include="scripts\umd\popper-utils.js.map" />
+    <Content Include="scripts\README.md" />
+    <Content Include="scripts\popper.min.js.map" />
+    <Content Include="scripts\popper.js.map" />
+    <Content Include="scripts\popper-utils.min.js.map" />
+    <Content Include="scripts\popper-utils.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BajadorArchi.ashx.cs">
+      <DependentUpon>BajadorArchi.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="clases\ConversorMultiXml.cs" />
+    <Compile Include="clases\ConversorXml.cs" />
+    <Compile Include="clases\CreadorExcel.cs" />
+    <Compile Include="clases\ExcelVO.cs" />
+    <Compile Include="clases\InfoArchivos.cs" />
+    <Compile Include="clases\LectorCarpetaXml.cs" />
+    <Compile Include="clases\LectorExcel.cs" />
+    <Compile Include="clases\LectorUsuarios.cs" />
+    <Compile Include="clases\ListaRutasPorVendedor.cs" />
+    <Compile Include="clases\MensajeroListaArchiVO.cs" />
+    <Compile Include="clases\MovedorArchivos.cs" />
+    <Compile Include="clases\ProcesadorVO.cs" />
+    <Compile Include="clases\PurchaseOrden.cs" />
+    <Compile Include="clases\UsuarioVO.cs" />
+    <Compile Include="Editor.aspx.cs">
+      <DependentUpon>Editor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Editor.aspx.designer.cs">
+      <DependentUpon>Editor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditorExcel.aspx.cs">
+      <DependentUpon>EditorExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditorExcel.aspx.designer.cs">
+      <DependentUpon>EditorExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListadorArchivos.ashx.cs">
+      <DependentUpon>ListadorArchivos.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Ppal.aspx.cs">
+      <DependentUpon>Ppal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ppal.aspx.designer.cs">
+      <DependentUpon>Ppal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Procesador.ashx.cs">
+      <DependentUpon>Procesador.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SesionadorArchivo.ashx.cs">
+      <DependentUpon>SesionadorArchivo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SubidorArchi.ashx.cs">
+      <DependentUpon>SubidorArchi.ashx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1762</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1762/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

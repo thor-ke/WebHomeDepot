@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WebHomeDepot.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ColectorXml" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\HDEPOT\ColectorXml</Value>
+    </Setting>
+    <Setting Name="CreadosExcel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\HDEPOT\CreadosExcel</Value>
+    </Setting>
+    <Setting Name="PublicadosExcel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\HDEPOT\PublicadosExcel</Value>
+    </Setting>
+    <Setting Name="ParaSapExcel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\HDEPOT\ParaSapExcel</Value>
+    </Setting>
+    <Setting Name="IngresadosSap" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\HDEPOT\IngresadosSap</Value>
+    </Setting>
+    <Setting Name="Procesados" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\HDEPOT\ColectorXml\Procesados</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,136 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="WebHomeDepot.Master" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <%--<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">--%>
+    <link href="scripts/plupload/js/jquery.plupload.queue/css/jquery.plupload.queue.css" rel="stylesheet" />
+    <link href="Recursos/css/all.css" rel="stylesheet" />
+
+    <%--INICIO DE PARCHE--%>
+    <link href="Recursos/gridBT/bootstrap.min.css" rel="stylesheet" />
+    <link href="Recursos/gridBT/all.min.css" rel="stylesheet" />
+    <link href="Recursos/gridBT/ui.jqgrid-bootstrap4.css" rel="stylesheet" />
+
+    <script src="Recursos/gridBT/jquery-2.2.0.min.js"></script>
+    <script src="Recursos/gridBT/jquery-ui.min.js"></script>
+    <script src="Recursos/gridBT/bootstrap.min.js"></script>
+    <script src="Recursos/gridBT/jquery.jqGrid.min.js"></script>
+    <script src="Recursos/gridBT/popper.min.js"></script>
+    <script src="scripts/i18n/grid.locale-es.js"></script>
+    <script src="Recursos/gridBT/jquery.jqGrid.min.js"></script>
+    <%--FIN DE PARCHE--%>
+
+
+    <script src="scripts/plupload/js/plupload.full.min.js"></script>
+    <script src="scripts/plupload/js/jquery.plupload.queue/jquery.plupload.queue.min.js"></script>
+    <script src="scripts/plupload/js/i18n/es.js"></script>
+
+    <script src="scripts/master.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+
+        codigoVendedor = '<%= Session["codigoVendedor"] %>';
+        nombreVendedor = '<%= Session["nombreVendedor"] %>';
+
+        function ShowPopup() {
+
+            $("#myModal").modal('show');
+
+        }
+
+    </script>
+    <style>
+     
+        .ui-jqgrid-sortable {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div class="container">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Archivos
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a id="aOrdenes" class="dropdown-item" href="Inicio.aspx">Ver Mis Ordenes de Venta (.xml)</a>
+                                <a id="aProcesados" class="dropdown-item" href="#"><i class="text-primary fas fa-file-excel"></i>Ver Procesados (.xls)</a>
+                                <div class="dropdown-divider"></div>
+                                <a id="aPublicados" class="dropdown-item" href="#">Ver Publicados (.xls)</a>
+                                <a class="dropdown-item" href="Editor.aspx">Editar Excel (.xls)</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                    <%--<form class="form-inline my-2 my-lg-0">--%>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Vendedor" aria-label="Search" style="width: 300px;" value='<%= Session["nombreVendedor"] %>' disabled />
+                    <asp:Button ID="btSalir" class="btn btn-outline-success my-2 my-sm-0" runat="server" Text="Salir" OnClick="btSalir_Click" />
+                    <%--</form>--%>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <!-- Modal Archivos Excel -->
+        <div class="modal fade" id="mdCreadosExcel" role="dialog">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Archivos Excel</h4>
+
+
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success alert-dismissible">
+
+                            <strong>En Session!</strong><i id="iMsj"> No tiene un archivo Seleccionado.</i>
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        </div>
+
+                        <table id="jgCreados" class="table table-bordered table-hover" style="font-family: 'Roboto' ,'Arial';"></table>
+                        <div id="jgCreadosPager"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</body>
+</html>

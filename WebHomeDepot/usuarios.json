@@ -1,0 +1,20 @@
+﻿[
+  {
+    "user": "juan",
+    "password": "123",
+    "nombre": "Juan Charrasqueado",
+    "codigoVendedor": "000"
+  },
+  {
+    "user": "pancho",
+    "password": "123",
+    "nombre": "Pancho Pistolas",
+    "codigoVendedor": "0"
+  },
+  {
+    "user": "lalo",
+    "password": "123",
+    "nombre": "Lalo Lalona",
+    "codigoVendedor": "000"
+  }
+]

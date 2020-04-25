@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PurchaseOrder>
+  <Sender>ZZ-homedepotmx</Sender>
+  <PO>
+    <PONumber>0000000000</PONumber>
+    <ASN>0000000000</ASN>
+    <RevNo>1</RevNo>
+    <Date>mm/dd/yy</Date>
+    <DateRev>mm/dd/yy</DateRev>
+    <DateDeliv>mm/dd/yy</DateDeliv>
+    <ShipVia>USE SHIPPING GUIDE</ShipVia>
+    <Lab>DESTINATION</Lab>
+    <BackOrders>CANCEL</BackOrders>
+    <FreigthTerms>PREPAID</FreigthTerms>
+    <InvoiceTerms>DATA</InvoiceTerms>
+    <TotalCube>0.00</TotalCube>
+    <TotalWeight>0.00</TotalWeight>
+    <Vendor>
+      <VendorId>000000</VendorId>
+      <VendorName>NAME OF VENDOR</VendorName>
+      <VendorAddress>VENDOR ADDRESS</VendorAddress>
+      <VendorCity>VENDOR CITY</VendorCity>
+      <VendorCountry>VENDOR COUNTRY (ABREVIATURA)</VendorCountry>
+      <VendorZipCode>00000</VendorZipCode>
+    </Vendor>
+    <StoreReceives>0000</StoreReceives>
+    <ShipTo>
+      <ShipToId>0000</ShipToId>
+      <ShipToNamePlace>AAAAAAAA</ShipToNamePlace>
+      <ShipToAddress>BBBBBBB</ShipToAddress>
+      <ShipToColony>CCCCCCC</ShipToColony>
+      <ShipToCity>DDDDDDD</ShipToCity>
+      <ShipToState>EEEEE</ShipToState>
+      <ShipToZip>FFFFFFFFF</ShipToZip>
+      <ShipToTelephone></ShipToTelephone>
+    </ShipTo>
+    <Instructions>
+      <Instruction Id = "INSTRUCCIONES" Type = "Special"></Instruction>
+      <Instruction Id = "" Type = "Special"></Instruction>
+      <Instruction Id = "INSTRUCCIONES." Type = "Shipping"></Instruction>
+    </Instructions>
+    <Items>
+      <Item>
+        <Id>000000</Id>
+        <Quantity>00</Quantity>
+        <UnitofMeasure>EA</UnitofMeasure>
+        <modl>0000000</modl>
+        <upc>0000000000000</upc>
+        <Descr>DESCRIPCION</Descr>
+        <UnitCost>0.00</UnitCost>
+        <Weight>0.00</Weight>
+        <Cube>0.00</Cube>
+        <Tab></Tab>
+      </Item>
+
+      <Item>
+        <Id>000000</Id>
+        <Quantity>00</Quantity>
+        <UnitofMeasure>EA</UnitofMeasure>
+        <modl>0000000</modl>
+        <upc>0000000000000</upc>
+        <Descr>DESCRIPCION</Descr>
+        <UnitCost>0.00</UnitCost>
+        <Weight>0.00</Weight>
+        <Cube>0.00</Cube>
+        <Tab></Tab>
+      </Item>
+    </Items>
+    <TotalQnty>000</TotalQnty>
+    <SubTotal>0.00</SubTotal>
+    <Iva>0</Iva>
+    <Total Currency = "CURRENCY">0.00</Total>
+    <InvoiceTo>
+      <InvoiceName>datos</InvoiceName>
+      <InvoiceAddress1>datos</InvoiceAddress1>
+      <InvoiceAddress2>datos</InvoiceAddress2>
+      <InvoiceAddress3>datos</InvoiceAddress3>
+      <InvoiceTelephone>datos</InvoiceTelephone>
+      <InvoiceFax>datos</InvoiceFax>
+      <InvoiceRfc>datos</InvoiceRfc>
+    </InvoiceTo>
+    <Status>STATUS</Status>
+  </PO>
+</PurchaseOrder>
