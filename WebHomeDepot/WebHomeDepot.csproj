@@ -429,7 +429,7 @@
     <Compile Include="clases\MensajeroListaArchiVO.cs" />
     <Compile Include="clases\MovedorArchivos.cs" />
     <Compile Include="clases\ProcesadorVO.cs" />
-    <Compile Include="clases\PurchaseOrden.cs" />
+    <Compile Include="clases\PurchaseOrderVO.cs" />
     <Compile Include="clases\UsuarioVO.cs" />
     <Compile Include="Editor.aspx.cs">
       <DependentUpon>Editor.aspx</DependentUpon>
@@ -505,7 +505,9 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="objetos\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

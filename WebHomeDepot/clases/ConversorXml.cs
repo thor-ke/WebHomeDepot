@@ -13,7 +13,7 @@ namespace WebHomeDepot.clases
             string pt = Properties.Settings.Default.CreadosExcel;
             string xmltext = File.ReadAllText(rutaXml);
 
-            var serializer = new XmlSerializer(typeof(PurchaseOrder));
+            var serializer = new XmlSerializer(typeof(PurchaseOrderPO));
             var buffer = Encoding.UTF8.GetBytes(xmltext);
           
             using (var stream = new MemoryStream(buffer))
