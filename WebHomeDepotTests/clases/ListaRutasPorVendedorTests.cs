@@ -18,7 +18,7 @@ namespace WebHomeDepot.clases.Tests
             };
 
             var vendedores =new ListaRutasPorVendedor();
-            vendedores.vendedor = 0;
+            vendedores.vendedor = string.Empty;
             vendedores.rutasXml = listaRuta;
             var listaRutas= vendedores.listar();
 

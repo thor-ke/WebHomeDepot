@@ -79,7 +79,7 @@ namespace WebHomeDepot
             List<string> lst = null;
             if (msj != null && msj.codVendedor!= string.Empty)
             {
-                lt.vendedor = byte.Parse(msj.codVendedor);
+                lt.vendedor = (msj.codVendedor);
                 lt.rutasXml = listaGen;
                 lst = lt.listar();
             }

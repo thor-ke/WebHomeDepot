@@ -5,7 +5,7 @@ namespace WebHomeDepot.clases
     public class ListaRutasPorVendedor
     {
 
-        public byte vendedor { get; set; }
+        public string vendedor { get; set; }
         public List<string> rutasXml { get; set; }
         public List<string> lstRutasVendedor { get; private set; }
       

@@ -312,6 +312,7 @@
     <Content Include="SubidorArchi.ashx" />
     <Content Include="Procesador.ashx" />
     <Content Include="Master.Master" />
+    <None Include="Properties\PublishProfiles\webOrder.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -429,7 +430,7 @@
     <Compile Include="clases\MensajeroListaArchiVO.cs" />
     <Compile Include="clases\MovedorArchivos.cs" />
     <Compile Include="clases\ProcesadorVO.cs" />
-    <Compile Include="clases\PurchaseOrderVO.cs" />
+    <Compile Include="clases\PurchaseOrden.cs" />
     <Compile Include="clases\UsuarioVO.cs" />
     <Compile Include="Editor.aspx.cs">
       <DependentUpon>Editor.aspx</DependentUpon>

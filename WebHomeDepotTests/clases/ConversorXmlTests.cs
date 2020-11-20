@@ -16,7 +16,7 @@ namespace WebHomeDepot.clases.Tests
 
             Debug.Write(json);
 
-            Assert.IsTrue(po.PO.Items.Length >0);
+            Assert.IsTrue(po.PO.Items.Length > 0);
         }
     }
 }

@@ -43,11 +43,11 @@
     public partial class PurchaseOrderPO
     {
 
-        private string pONumberField;
+        private byte pONumberField;
 
-        private string aSNField;
+        private byte aSNField;
 
-        private string revNoField;
+        private byte revNoField;
 
         private string dateField;
 
@@ -71,7 +71,7 @@
 
         private PurchaseOrderPOVendor vendorField;
 
-        private string storeReceivesField;
+        private byte storeReceivesField;
 
         private PurchaseOrderPOShipTo shipToField;
 
@@ -79,11 +79,11 @@
 
         private PurchaseOrderPOItem[] itemsField;
 
-        private string totalQntyField;
+        private byte totalQntyField;
 
         private decimal subTotalField;
 
-        private string ivaField;
+        private byte ivaField;
 
         private PurchaseOrderPOTotal totalField;
 
@@ -92,7 +92,7 @@
         private string statusField;
 
         /// <remarks/>
-        public string PONumber
+        public byte PONumber
         {
             get
             {
@@ -105,7 +105,7 @@
         }
 
         /// <remarks/>
-        public string ASN
+        public byte ASN
         {
             get
             {
@@ -118,7 +118,7 @@
         }
 
         /// <remarks/>
-        public string RevNo
+        public byte RevNo
         {
             get
             {
@@ -274,7 +274,7 @@
         }
 
         /// <remarks/>
-        public string StoreReceives
+        public byte StoreReceives
         {
             get
             {
@@ -328,7 +328,7 @@
         }
 
         /// <remarks/>
-        public string TotalQnty
+        public byte TotalQnty
         {
             get
             {
@@ -354,7 +354,7 @@
         }
 
         /// <remarks/>
-        public string Iva
+        public byte Iva
         {
             get
             {
@@ -411,7 +411,7 @@
     public partial class PurchaseOrderPOVendor
     {
 
-        private string vendorIdField;
+        private byte vendorIdField;
 
         private string vendorNameField;
 
@@ -421,10 +421,10 @@
 
         private string vendorCountryField;
 
-        private string vendorZipCodeField;
+        private byte vendorZipCodeField;
 
         /// <remarks/>
-        public string VendorId
+        public byte VendorId
         {
             get
             {
@@ -489,7 +489,7 @@
         }
 
         /// <remarks/>
-        public string VendorZipCode
+        public byte VendorZipCode
         {
             get
             {
@@ -507,7 +507,7 @@
     public partial class PurchaseOrderPOShipTo
     {
 
-        private string shipToIdField;
+        private byte shipToIdField;
 
         private string shipToNamePlaceField;
 
@@ -524,7 +524,7 @@
         private object shipToTelephoneField;
 
         /// <remarks/>
-        public string ShipToId
+        public byte ShipToId
         {
             get
             {

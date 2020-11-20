@@ -2,6 +2,8 @@
 {
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
     public partial class PurchaseOrder
@@ -39,15 +41,17 @@
     }
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class PurchaseOrderPO
     {
 
-        private string pONumberField;
+        private ulong pONumberField;
 
-        private string aSNField;
+        private object aSNField;
 
-        private string revNoField;
+        private byte revNoField;
 
         private string dateField;
 
@@ -67,32 +71,32 @@
 
         private decimal totalCubeField;
 
-        private decimal totalWeightField;
+        private byte totalWeightField;
 
         private PurchaseOrderPOVendor vendorField;
 
-        private string storeReceivesField;
+        private ushort storeReceivesField;
 
         private PurchaseOrderPOShipTo shipToField;
 
         private PurchaseOrderPOInstruction[] instructionsField;
 
-        private PurchaseOrderPOItem[] itemsField;
+        private PurchaseOrderPOItems[] itemsField;
 
-        private string totalQntyField;
+        private byte totalQntyField;
 
-        private decimal subTotalField;
+        private ushort subTotalField;
 
-        private string ivaField;
+        private ushort ivaField;
 
         private PurchaseOrderPOTotal totalField;
 
         private PurchaseOrderPOInvoiceTo invoiceToField;
 
-        private string statusField;
+        private object statusField;
 
         /// <remarks/>
-        public string PONumber
+        public ulong PONumber
         {
             get
             {
@@ -105,7 +109,7 @@
         }
 
         /// <remarks/>
-        public string ASN
+        public object ASN
         {
             get
             {
@@ -118,7 +122,7 @@
         }
 
         /// <remarks/>
-        public string RevNo
+        public byte RevNo
         {
             get
             {
@@ -248,7 +252,7 @@
         }
 
         /// <remarks/>
-        public decimal TotalWeight
+        public byte TotalWeight
         {
             get
             {
@@ -274,7 +278,7 @@
         }
 
         /// <remarks/>
-        public string StoreReceives
+        public ushort StoreReceives
         {
             get
             {
@@ -314,8 +318,7 @@
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlArrayItemAttribute("Item", IsNullable = false)]
-        public PurchaseOrderPOItem[] Items
+        public PurchaseOrderPOItems Items
         {
             get
             {
@@ -328,7 +331,7 @@
         }
 
         /// <remarks/>
-        public string TotalQnty
+        public byte TotalQnty
         {
             get
             {
@@ -341,7 +344,7 @@
         }
 
         /// <remarks/>
-        public decimal SubTotal
+        public ushort SubTotal
         {
             get
             {
@@ -354,7 +357,7 @@
         }
 
         /// <remarks/>
-        public string Iva
+        public ushort Iva
         {
             get
             {
@@ -393,7 +396,7 @@
         }
 
         /// <remarks/>
-        public string Status
+        public object Status
         {
             get
             {
@@ -407,11 +410,13 @@
     }
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class PurchaseOrderPOVendor
     {
 
-        private string vendorIdField;
+        private ushort vendorIdField;
 
         private string vendorNameField;
 
@@ -421,10 +426,10 @@
 
         private string vendorCountryField;
 
-        private string vendorZipCodeField;
+        private uint vendorZipCodeField;
 
         /// <remarks/>
-        public string VendorId
+        public ushort VendorId
         {
             get
             {
@@ -489,7 +494,7 @@
         }
 
         /// <remarks/>
-        public string VendorZipCode
+        public uint VendorZipCode
         {
             get
             {
@@ -503,11 +508,13 @@
     }
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class PurchaseOrderPOShipTo
     {
 
-        private string shipToIdField;
+        private ushort shipToIdField;
 
         private string shipToNamePlaceField;
 
@@ -519,12 +526,12 @@
 
         private string shipToStateField;
 
-        private string shipToZipField;
+        private uint shipToZipField;
 
         private object shipToTelephoneField;
 
         /// <remarks/>
-        public string ShipToId
+        public ushort ShipToId
         {
             get
             {
@@ -602,7 +609,7 @@
         }
 
         /// <remarks/>
-        public string ShipToZip
+        public uint ShipToZip
         {
             get
             {
@@ -629,6 +636,8 @@
     }
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class PurchaseOrderPOInstruction
     {
@@ -667,23 +676,48 @@
     }
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class PurchaseOrderPOItem
+    public partial class PurchaseOrderPOItems
     {
 
-        private string idField;
+        private PurchaseOrderPOItemsItem itemField;
 
-        private string quantityField;
+        /// <remarks/>
+        public PurchaseOrderPOItemsItem Item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+    }
+
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    public partial class PurchaseOrderPOItemsItem
+    {
+
+        private uint idField;
+
+        private byte quantityField;
 
         private string unitofMeasureField;
 
         private string modlField;
 
-        private string upcField;
+        private byte upcField;
 
         private string descrField;
 
-        private decimal unitCostField;
+        private ushort unitCostField;
 
         private decimal weightField;
 
@@ -692,7 +726,7 @@
         private object tabField;
 
         /// <remarks/>
-        public string Id
+        public uint Id
         {
             get
             {
@@ -705,7 +739,7 @@
         }
 
         /// <remarks/>
-        public string Quantity
+        public byte Quantity
         {
             get
             {
@@ -744,7 +778,7 @@
         }
 
         /// <remarks/>
-        public string upc
+        public byte upc
         {
             get
             {
@@ -770,7 +804,7 @@
         }
 
         /// <remarks/>
-        public decimal UnitCost
+        public ushort UnitCost
         {
             get
             {
@@ -823,13 +857,15 @@
     }
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class PurchaseOrderPOTotal
     {
 
         private string currencyField;
 
-        private decimal valueField;
+        private ushort valueField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
@@ -847,7 +883,7 @@
 
         /// <remarks/>
         [System.Xml.Serialization.XmlTextAttribute()]
-        public decimal Value
+        public ushort Value
         {
             get
             {
@@ -861,6 +897,8 @@
     }
 
     /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class PurchaseOrderPOInvoiceTo
     {

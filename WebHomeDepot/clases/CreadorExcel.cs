@@ -1,7 +1,6 @@
 ﻿using SpreadsheetLight;
 using System.Collections.Generic;
 using System.IO;
-using WebHomeDepot.clases;
 
 namespace WebHomeDepot.clases
 {
@@ -40,17 +39,22 @@ namespace WebHomeDepot.clases
 
             foreach (PurchaseOrder po in lstPO)
             {
-                PurchaseOrderPOItems[] p = po.PO.Items; //po.Items  po.PO.Items;
+               
+                PurchaseOrderPOItem[] p = po.PO.Items; 
+                //po.Items  po.PO.Items;
                 int lg = p.Length;
+
+
                 for (int i = 0; i < lg; i++)
                 {
                     //string ct = p.[i].Quantity;
-                    string ct= p[i].Item.Quantity.ToString();
-                    string desc = p[i].Item.Descr;
+                    string ct= p[i].Quantity.ToString();
+                    string desc = p[i].Descr;
                     string ship = po.PO.ShipTo.ShipToId.ToString(); ;  //.ShipTo.ShipToId +"-" + po.PO.ShipTo.ShipToNamePlace;
-                    string sku = p[i].Item.Id.ToString();
-                    byte oc = po.PO.PONumber;
-                    decimal costo = p[i].Item.UnitCost;
+                    string sku = p[i].Id.ToString();
+                    //byte oc = po.PO.PONumber;
+                    string oc = po.PO.PONumber;
+                    decimal costo = p[i].UnitCost;
                     dt.Rows.Add(sku, desc, ct,ship,oc,costo);
                 }
             }
